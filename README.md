@@ -10,24 +10,23 @@ When this program starts an arduino sketch, it will read the arduino sketch and 
 Installing is quite easy. Just copy the executable anywhere on your PC and associate the program to the .ino extension.
 The list of recent files will show when you start the program without arguments.
 You can also delete files from the recent list by first selecting them with a right click and then a left click to delete.
-
-The information that you'll need to provide in the top lines of your sketch:
-
-by default the Arduino IDE is started with the command 'arduino'. On my Linux laptop this works fine but in case the IDE will not come up, try to add a line in the sketch with this text:
-    //exec=<arduino executable filename> ( default = //exec=arduino )
-
-You can also put that line in the preferences.txt file (without the two forward slashes)
-    exec=<arduino executable filename>
-    or
-    .exec=<arduino executable filename>
-	to keep the line on top in preferences.txt
-
-The "exec" or ".exec" settings in preferences.txt take precedence over the exec filename in the sketch.
-
-When the preferences.txt file is not found, set the path to the arduino root:
-    //root=<the directory where your preferences file is located> ( default = ~/.arduino15/ )
-
-
+  
+The information that you'll need to provide in the top lines of your sketch:  
+By default the Arduino IDE is started with the command 'arduino'. On my Linux laptop this works fine but in case the IDE will not come up, try to add a line in the sketch with this text:  
+    //exec=<arduino executable filename> ( default = //exec=arduino )  
+  
+You can also put that line in the preferences.txt file (without the two forward slashes)  
+    exec=<arduino executable filename>  
+    or  
+    .exec=<arduino executable filename>  
+    to keep the line on top in preferences.txt  
+  
+The "exec" or ".exec" settings in preferences.txt take precedence over the exec filename in the sketch.  
+  
+When the preferences.txt file is not found, set the path to the arduino root:  
+    //root=<the directory where your preferences file is located> ( default = ~/.arduino15/ )  
+  
+  
 Your sketch compiles correctly when you supply all the lines from preferences.txt that start with:  
 board=  
 custom_  
