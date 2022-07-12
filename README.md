@@ -28,46 +28,42 @@ When the preferences.txt file is not found, set the path to the arduino root:
     //root=<the directory where your preferences file is located> ( default = ~/.arduino15/ )
 
 
-These characters will not be allowed in the executable name for security reasons:
-    | ` < > & *
+Your sketch compile correctly when you supply all the lines from preferences.txt that start with:  
+board=  
+custom_  
+target_  
+With two forward slashes // in front to avoid compiler errors.  
 
 
-Your sketch compile correctly when you supply all the lines from preferences.txt that start with:
-board=
-custom_
-target_
-With two forward slashes // in front to avoid compiler errors.
+Examples for a few boards  
+(this information can be extracted from preferences.txt):  
 
+Arduino nano with old bootloader:  
+---------------------------------  
+//board=nano  
+//custom_cpu=nano_atmega328old  
+//target_package=arduino  
+//target_platform=avr  
 
-Examples for a few boards
-(this information can be extracted from preferences.txt):
+Arduino Pro or Pro Mini:  
+------------------------  
+//board=pro  
+//custom_cpu=pro_16MHzatmega328  
+//target_package=arduino  
+//target_platform=avr  
 
-Arduino nano with old bootloader:
----------------------------------
-//board=nano
-//custom_cpu=nano_atmega328old
-//target_package=arduino
-//target_platform=avr
-
-Arduino Pro or Pro Mini:
-------------------------
-//board=pro
-//custom_cpu=pro_16MHzatmega328
-//target_package=arduino
-//target_platform=avr
-
-ESP32 Dev Board
----------------
-//board=esp32
-//custom_CPUFreq=esp32_240
-//custom_DebugLevel=esp32_none
-//custom_EventsCore=esp32_1
-//custom_FlashFreq=esp32_80
-//custom_FlashMode=esp32_qio
-//custom_FlashSize=esp32_4M
-//custom_LoopCore=esp32_1
-//custom_PSRAM=esp32_disabled
-//custom_PartitionScheme=esp32_default
-//custom_UploadSpeed=esp32_921600
-//target_package=esp32
-//target_platform=esp32
+ESP32 Dev Board  
+---------------  
+//board=esp32  
+//custom_CPUFreq=esp32_240  
+//custom_DebugLevel=esp32_none  
+//custom_EventsCore=esp32_1  
+//custom_FlashFreq=esp32_80  
+//custom_FlashMode=esp32_qio  
+//custom_FlashSize=esp32_4M  
+//custom_LoopCore=esp32_1  
+//custom_PSRAM=esp32_disabled  
+//custom_PartitionScheme=esp32_default  
+//custom_UploadSpeed=esp32_921600  
+//target_package=esp32  
+//target_platform=esp32  
