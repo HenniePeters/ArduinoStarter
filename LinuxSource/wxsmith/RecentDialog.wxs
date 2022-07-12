@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<wxsmith>
+	<object class="wxDialog" name="RecentDialog">
+		<title>Arduino sketch loader 1.0 </title>
+		<id_arg>0</id_arg>
+		<object class="wxBoxSizer" variable="BoxSizer1" member="yes">
+			<object class="sizeritem">
+				<object class="wxBoxSizer" variable="BoxSizer4" member="no">
+					<object class="sizeritem">
+						<object class="wxBoxSizer" variable="BoxSizer3" member="no">
+							<orient>wxVERTICAL</orient>
+							<object class="sizeritem">
+								<object class="wxGridSizer" variable="GridSizer1" member="no">
+									<cols>2</cols>
+									<rows>2</rows>
+									<object class="sizeritem">
+										<object class="wxStaticText" name="ID_STATICTEXT6" variable="StaticText5" member="yes">
+											<label>Controller type:</label>
+											<font>
+												<size>14</size>
+												<style>normal</style>
+												<weight>normal</weight>
+												<underlined>0</underlined>
+												<family>default</family>
+												<face>Ubuntu</face>
+											</font>
+											<minsize>-1,40</minsize>
+											<maxsize>-1,-1</maxsize>
+										</object>
+										<flag>wxALL|wxEXPAND</flag>
+										<border>5</border>
+										<option>1</option>
+									</object>
+									<object class="sizeritem">
+										<object class="wxStaticText" name="ID_STATICTEXT11" variable="txtController" member="yes">
+											<label>Select a sketch</label>
+											<font>
+												<size>14</size>
+												<style>normal</style>
+												<weight>normal</weight>
+												<underlined>0</underlined>
+												<family>default</family>
+												<face>Ubuntu</face>
+											</font>
+											<minsize>400,40</minsize>
+											<maxsize>-1,-1</maxsize>
+										</object>
+										<flag>wxALL|wxEXPAND</flag>
+										<border>5</border>
+										<option>1</option>
+									</object>
+									<object class="sizeritem">
+										<object class="wxStaticText" name="ID_STATICTEXT12" variable="StaticText8" member="yes">
+											<label>Recent files:</label>
+											<font>
+												<size>14</size>
+												<style>normal</style>
+												<weight>normal</weight>
+												<underlined>0</underlined>
+												<family>default</family>
+												<face>Ubuntu</face>
+											</font>
+											<minsize>-1,40</minsize>
+											<maxsize>-1,-1</maxsize>
+										</object>
+										<flag>wxALL|wxEXPAND</flag>
+										<border>5</border>
+										<option>1</option>
+									</object>
+									<object class="sizeritem">
+										<object class="wxStaticText" name="ID_STATICTEXT13" variable="txtRecent" member="yes">
+											<label></label>
+											<font>
+												<size>14</size>
+												<style>normal</style>
+												<weight>normal</weight>
+												<underlined>0</underlined>
+												<family>default</family>
+												<face>Ubuntu</face>
+											</font>
+											<minsize>400,40</minsize>
+											<maxsize>-1,40</maxsize>
+										</object>
+										<flag>wxALL|wxEXPAND</flag>
+										<border>5</border>
+										<option>1</option>
+									</object>
+								</object>
+								<flag>wxALL|wxEXPAND|wxSHAPED</flag>
+								<border>5</border>
+								<option>1</option>
+							</object>
+							<object class="sizeritem">
+								<object class="wxListBox" name="ID_LISTBOX1" variable="lbxRecentSketches" member="yes">
+									<default>-1</default>
+									<minsize>900,500</minsize>
+								</object>
+								<flag>wxEXPAND</flag>
+								<border>5</border>
+							</object>
+						</object>
+						<flag>wxALL|wxALIGN_TOP</flag>
+						<border>5</border>
+						<option>1</option>
+					</object>
+					<object class="sizeritem">
+						<object class="wxBoxSizer" variable="BoxSizer2" member="yes">
+							<orient>wxVERTICAL</orient>
+							<object class="sizeritem">
+								<object class="wxButton" name="ID_BUTTON1" variable="cmdOK" member="yes">
+									<label>Open</label>
+									<enabled>0</enabled>
+									<handler function="OnOKClick" entry="EVT_BUTTON" />
+								</object>
+								<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+								<border>5</border>
+								<option>1</option>
+							</object>
+							<object class="sizeritem">
+								<object class="wxButton" name="ID_BUTTON2" variable="Quit" member="yes">
+									<label>Quit</label>
+									<handler function="OnQuitClick" entry="EVT_BUTTON" />
+								</object>
+								<flag>wxTOP|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+								<border>11</border>
+								<option>1</option>
+							</object>
+						</object>
+						<flag>wxEXPAND|wxSHAPED</flag>
+					</object>
+				</object>
+				<flag>wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+				<option>1</option>
+			</object>
+		</object>
+	</object>
+</wxsmith>
