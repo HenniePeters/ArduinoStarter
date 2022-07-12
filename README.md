@@ -28,15 +28,16 @@ When the preferences.txt file is not found, set the path to the arduino root:
     //root=<the directory where your preferences file is located> ( default = ~/.arduino15/ )
 
 
-Your sketch compile correctly when you supply all the lines from preferences.txt that start with:  
+Your sketch compiles correctly when you supply all the lines from preferences.txt that start with:  
 board=  
 custom_  
 target_  
-With two forward slashes // in front to avoid compiler errors.  
+with two forward slashes // in front to avoid compiler errors.  
 
 
 Examples for a few boards  
-(this information can be extracted from preferences.txt):  
+(this information can be extracted from preferences.txt
+ once you've set the correct information in the IDE's menu):  
 
 Arduino nano with old bootloader:  
 ---------------------------------  
