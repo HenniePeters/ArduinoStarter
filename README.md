@@ -1,15 +1,22 @@
 # ArduinoStarter  
-  a program to automatically change the controller settings when you open a sketch. Also the list of recent files is much longer than the Arduino IDE shows.
 
-The reason I made this program was because I have a few controller boards that cannot be programmed anymore. I accidently programmed these with the wrong controller settings.
-For the moment a Linux version only. I will try to find some time to create a Windows version later.
+2022-07-14
+----------
+UPDATE:
+Windows version is ready
 
-
-When this program starts an arduino sketch, it will read the arduino sketch and try to locate the board type in the header lines of your program. When found it will use that information to set the board type in the Arduino IDE.
-
-Installing is quite easy. Just copy the executable anywhere on your PC and associate the program to the .ino extension.
-The list of recent files will show when you start the program without arguments.
-You can also delete files from the recent list by first selecting them with a right click and then a left click to delete.
+2022-07-12
+----------
+  a program to automatically change the controller settings when you open a sketch. Also the list of recent files is much longer than the Arduino IDE shows.  
+  
+The reason I made this program was because I have a few controller boards that cannot be programmed anymore. I accidently programmed these with the wrong controller settings.  
+For the moment a Linux version only. I will try to find some time to create a Windows version later.  
+  
+When this program starts an arduino sketch, it will read the arduino sketch and try to locate the board type in the header lines of your program. When found it will use that information to set the board type in the Arduino IDE.  
+  
+Installing is quite easy. Just copy the executable anywhere on your PC and associate the program to the .ino extension.  
+The list of recent files will show when you start the program without arguments.  
+You can also delete files from the recent list by first selecting them with a right click and then a left click to delete.  
   
 The information that you'll need to provide in the top lines of your sketch:  
 ---------------------------------
