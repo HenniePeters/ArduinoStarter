@@ -56,7 +56,7 @@ bool ArduinoLoaderApp::OnInit() {
                 wxMessageBox( _( "Error while processing preferences.txt\nCheck the board settings before uploading." ), _( "Warning" ) );
             }
         } else { // sketch does not contain header information, just open the sketch
-            wxMessageBox( _( "There was no board information found in the sketch.\nCheck the board settings before uploading." ), _( "Warning" ) );
+            wxMessageBox( _( "There was no controller type (//board= and //target=) found in the sketch.\nCheck the board settings before uploading." ), _( "Warning" ) );
         }
         wxString cmd = filehandler.BannedCharacters( filehandler.Executable );
         cmd += _( "  " ) + wxTheApp->argv[1] + _( "  &" );

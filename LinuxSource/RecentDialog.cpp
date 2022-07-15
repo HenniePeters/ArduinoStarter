@@ -13,6 +13,7 @@
 
 #include <wx/msgdlg.h>
 #include "RecentDialog.h"
+#include "HelpDialog.h"
 #include "FileHandler.h"
 
 //(*InternalHeaders(RecentDialog)
@@ -28,6 +29,7 @@ const long RecentDialog::ID_STATICTEXT12 = wxNewId();
 const long RecentDialog::ID_STATICTEXT13 = wxNewId();
 const long RecentDialog::ID_LISTBOX1 = wxNewId();
 const long RecentDialog::ID_BUTTON1 = wxNewId();
+const long RecentDialog::ID_BUTTON3 = wxNewId();
 const long RecentDialog::ID_BUTTON2 = wxNewId();
 //*)
 
@@ -35,6 +37,13 @@ BEGIN_EVENT_TABLE( RecentDialog, wxDialog )
     //(*EventTable(RecentDialog)
     //*)
 END_EVENT_TABLE()
+
+// "/home/hennep/Arduino/ESP32_Power/ESP32_Power.ino"
+
+RecentDialog::~RecentDialog() {
+    //(*Destroy(RecentDialog)
+    //*)
+}
 
 void RecentDialog::OnListboxDblClick( wxCommandEvent &event ) {
     OnOKClick( event );
@@ -44,14 +53,24 @@ void RecentDialog::OnQuitClick( wxCommandEvent& event ) {
     Close();
 }
 
-RecentDialog::~RecentDialog() {
-    //(*Destroy(RecentDialog)
+void RecentDialog::OnHelpClick(wxCommandEvent &event) {
+    //(*AppInitialize
+       HelpDialog Hlp( 0 );
+        Hlp.ShowModal();
     //*)
 }
 
 void RecentDialog::OnOKClick( wxCommandEvent& event ) {
     if( lbxRecentSketches->GetSelection() >= 0 ) {
-        wxString cmd = ThisApp->argv[0] + _( " \"" ) + lbxRecentSketches->GetString( lbxRecentSketches->GetSelection() ) + "\" &";
+        wxString wxsIno = lbxRecentSketches->GetString( lbxRecentSketches->GetSelection() );
+        if( wxFileExists( wxsIno ) ) {
+            arduino_sketch.ClearCashedSketch();
+            filehandler.ReadSketch( wxsIno );
+            if( arduino_sketch.Board.Left( 6 ) != _( "board=" ) ) {
+                wxMessageDialog dlg( NULL, _( "There was no controller type (//board= and //target=) found in the sketch.\nCheck the board settings before uploading." ), _( "Warning" ) );
+            }
+        }
+        wxString cmd = ThisApp->argv[0] + _( " \"" ) + wxsIno + "\" &";
         system( cmd.c_str().AsChar() );
         Close();
     }
@@ -105,7 +124,13 @@ void RecentDialog::PopulateListbox( void ) {
             }
             wxsRecent = wxsRight;
         } else {
-            wxsRecent = wxsLeft;
+            if( wxsLeft.Left( 16 ).Lower() == "recent.sketches=" ) {
+                size_t len = wxsLeft.Len() - 16;
+                lbxRecentSketches->AppendAndEnsureVisible( wxsLeft.substr( 16, len ) );
+            } else {
+                lbxRecentSketches->AppendAndEnsureVisible( wxsLeft );
+            }
+            counter++;
             break;
         }
         counter++;
@@ -159,6 +184,8 @@ RecentDialog::RecentDialog( wxApp * TheApp, wxWindow * parent, wxWindowID id, co
     cmdOK = new wxButton(this, ID_BUTTON1, _("Open"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON1"));
     cmdOK->Disable();
     BoxSizer2->Add(cmdOK, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+    Help = new wxButton(this, ID_BUTTON3, _("Help"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON3"));
+    BoxSizer2->Add(Help, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     Quit = new wxButton(this, ID_BUTTON2, _("Quit"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON2"));
     BoxSizer2->Add(Quit, 1, wxTOP|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 11);
     BoxSizer4->Add(BoxSizer2, 0, wxEXPAND|wxSHAPED, 0);
@@ -173,6 +200,7 @@ RecentDialog::RecentDialog( wxApp * TheApp, wxWindow * parent, wxWindowID id, co
     Connect( ID_LISTBOX1, wxEVT_LISTBOX_DCLICK, ( wxObjectEventFunction )&RecentDialog::OnListboxDblClick );
     Connect( ID_LISTBOX1, wxEVT_LISTBOX, ( wxObjectEventFunction )&RecentDialog::OnListboxSelect );
     Connect( ID_LISTBOX1, wxEVT_CONTEXT_MENU, ( wxObjectEventFunction )&RecentDialog::OnListboxContext );
+    Connect( ID_BUTTON3, wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&RecentDialog::OnHelpClick);
     PopulateListbox();
     if( lbxRecentSketches->GetCount() > 0 ) {
         lbxRecentSketches->SetFirstItem( 0 );

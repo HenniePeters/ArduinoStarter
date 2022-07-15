@@ -33,6 +33,7 @@ public:
     //(*Declarations(RecentDialog)
     wxBoxSizer* BoxSizer1;
     wxBoxSizer* BoxSizer2;
+    wxButton* Help;
     wxButton* Quit;
     wxButton* cmdOK;
     wxListBox* lbxRecentSketches;
@@ -50,19 +51,22 @@ protected:
     static const long ID_STATICTEXT13;
     static const long ID_LISTBOX1;
     static const long ID_BUTTON1;
+    static const long ID_BUTTON3;
     static const long ID_BUTTON2;
     //*)
 
 private:
     wxApp* ThisApp;
     //(*Handlers(RecentDialog)
-    void OnQuit( wxCommandEvent& event );
+    //void OnQuit( wxCommandEvent& event );
     void OnQuitClick(wxCommandEvent& event);
     void OnOKClick(wxCommandEvent& event);
     //*)
     void OnListboxDblClick(wxCommandEvent &event);
     void OnListboxSelect(wxCommandEvent &event);
     void OnListboxContext(wxCommandEvent &event);
+    void OnHelpClick(wxCommandEvent &event);
+
 
     DECLARE_EVENT_TABLE()
 };

@@ -3,7 +3,8 @@
 2022-07-15  
 ----------  
 The Windows program tries to find the default executable for both 32 and 64 bits versions.  
-A help form was created with all possible keywords for the sketch and the added keywords for preferences.txt.  
+A help form was created with all possible keywords for the sketch and the added keywords for preferences.txt (for both Windows and Linux).  
+A few minor bugfixes to the Linux version.
   
 2022-07-14  
 ----------  

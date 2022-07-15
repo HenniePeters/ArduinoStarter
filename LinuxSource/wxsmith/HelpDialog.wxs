@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<wxsmith>
+	<object class="wxDialog" name="HelpDialog">
+		<size>760,672</size>
+		<pos_arg>1</pos_arg>
+		<size_arg>1</size_arg>
+		<object class="wxRichTextCtrl" name="ID_RICHTEXTCTRL1" variable="RichTextCtrl1" member="yes">
+			<value>The program tries to start the default Arduino executable with the &apos;arduino&apos; command. When your Arduino IDE is started otherwise try that command in a console and when that works, add a line to either preferences.txt or to your sketch:&#x0A;.exec=&lt;path to executable name&gt; in preferences.txt (.exec will always stay on top.)&#x0A;or:&#x0A;exec=&lt;path to executable name&gt; in preferences.txt&#x0A;or:&#x0A;//exec=&lt;path to executable name&gt; in the sketch.&#x0A;&#x0A;The &apos;preferences.txt&apos; is expected to reside in: ~/Arduino15/.&#x0A;   &#x0A;When it is located somewhere else, you will need a line in the sketch to point to that location:&#x0A;//root=&lt;directory of preference.txt&gt; (ending with a forward slash )&#x0A;      &#x0A;To set the correct controller type for the sketch, copy all lines from preferences.txt that start with:&#x0A;      board=...&#x0A;      custom__...&#x0A;      target__...&#x0A;and paste these lines at the top of your sketch with 2 forward slashes in front:&#x0A;      //board=...&#x0A;      //custom__...&#x0A;      //target__...&#x0A;      &#x0A;Keep in mind that the Arduino IDE needs to be closed before you can copy the lines from preferences.txt.&#x0A;Your changes to the board settings in the Arduino IDE will only be saved to preferences.txt when you leave the IDE, NOT when you save the sketch!&#x0A;      &#x0A;Do not place any lines of code between the board info data as the ArdunioStarter will only read comment lines in the header until the first code line. &#x0A;Empty lines between the board info lines are accepted.</value>
+			<pos>8,8</pos>
+			<size>744,656</size>
+			<style>wxRE_MULTILINE|wxRE_READONLY</style>
+			<handler function="OnRichTextCtrl1Text" entry="EVT_TEXT" />
+		</object>
+	</object>
+</wxsmith>

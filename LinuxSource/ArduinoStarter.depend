@@ -1389,15 +1389,16 @@
 
 1585059103 /usr/include/wx-3.0/wx/gtk/checklst.h
 
-1657645470 source:/home/data/VBOX/VBOX_DATA/CodeBlocks/ArduinoStarter/RecentDialog.cpp
+1657902130 source:/home/data/VBOX/VBOX_DATA/CodeBlocks/ArduinoStarter/RecentDialog.cpp
 	<wx/msgdlg.h>
 	"RecentDialog.h"
+	"HelpDialog.h"
 	"FileHandler.h"
 	<wx/font.h>
 	<wx/intl.h>
 	<wx/string.h>
 
-1657649493 /home/data/VBOX/VBOX_DATA/CodeBlocks/ArduinoStarter/RecentDialog.h
+1657885535 /home/data/VBOX/VBOX_DATA/CodeBlocks/ArduinoStarter/RecentDialog.h
 	<wx/button.h>
 	<wx/dialog.h>
 	<wx/listbox.h>
@@ -1426,7 +1427,7 @@
 	<wx/textctrl.h>
 	<wx/app.h>
 
-1657647939 source:/home/data/VBOX/VBOX_DATA/CodeBlocks/ArduinoStarter/ArduinoStarterApp.cpp
+1657881005 source:/home/data/VBOX/VBOX_DATA/CodeBlocks/ArduinoStarter/ArduinoStarterApp.cpp
 	<fstream>
 	<iostream>
 	<filesystem>
@@ -1440,7 +1441,7 @@
 1657628177 /home/data/VBOX/VBOX_DATA/CodeBlocks/ArduinoStarter/ArduinoStarterApp.h
 	<wx/app.h>
 
-1657648541 source:/home/data/VBOX/VBOX_DATA/CodeBlocks/ArduinoStarter/FileHandler.cpp
+1657649493 source:/home/data/VBOX/VBOX_DATA/CodeBlocks/ArduinoStarter/FileHandler.cpp
 	<fstream>
 	<iostream>
 	<filesystem>
@@ -1451,4 +1452,13 @@
 	<vector>
 	<wx/app.h>
 	<wx/msgdlg.h>
+
+1657892870 source:/home/data/VBOX/VBOX_DATA/CodeBlocks/ArduinoStarter/HelpDialog.cpp
+	"HelpDialog.h"
+	<wx/intl.h>
+	<wx/string.h>
+
+1657888472 /home/data/VBOX/VBOX_DATA/CodeBlocks/ArduinoStarter/HelpDialog.h
+	<wx/dialog.h>
+	<wx/richtext/richtextctrl.h>
 
