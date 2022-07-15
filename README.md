@@ -1,13 +1,18 @@
 # ArduinoStarter  
 
-2022-07-14
-----------
-UPDATE:
-Windows version is ready
-
-2022-07-12
-----------
-  a program to automatically change the controller settings when you open a sketch. Also the list of recent files is much longer than the Arduino IDE shows.  
+2022-07-15  
+----------  
+The Windows program tries to find the default executable for both 32 and 64 bits versions.  
+A help form was created with all possible keywords for the sketch and the added keywords for preferences.txt.  
+  
+2022-07-14  
+----------  
+UPDATE:  
+Windows version is ready  
+  
+2022-07-12  
+----------  
+  a program to automatically change the controller settings when you open a sketch. Also the list of recent files is much longer than the   Arduino IDE shows.  
   
 The reason I made this program was because I have a few controller boards that cannot be programmed anymore. I accidently programmed these with the wrong controller settings.  
 For the moment a Linux version only. I will try to find some time to create a Windows version later.  

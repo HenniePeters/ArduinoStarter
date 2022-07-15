@@ -1,11 +1,15 @@
 object frmMain: TfrmMain
-  Left = 1499
-  Top = 602
+  Left = 1488
+  Top = 606
   Width = 1043
   Height = 735
   BorderIcons = []
   Caption = ' Arduino starter'
   Color = clWindow
+  Constraints.MaxHeight = 735
+  Constraints.MaxWidth = 1043
+  Constraints.MinHeight = 735
+  Constraints.MinWidth = 1043
   Ctl3D = False
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -39,6 +43,7 @@ object frmMain: TfrmMain
     000FF800001FFC00003FFC00007FFF8000FFFFC005FFFFFABFFFFFFFFFFF}
   OldCreateOrder = False
   OnCreate = FormCreate
+  OnResize = FormResize
   PixelsPerInch = 96
   TextHeight = 13
   object Panel1: TPanel
@@ -171,6 +176,21 @@ object frmMain: TfrmMain
         ParentFont = False
         TabOrder = 1
         OnClick = cmdCancelClick
+      end
+      object cmdHelp: TButton
+        Left = 790
+        Top = 4
+        Width = 115
+        Height = 33
+        Caption = '&Help'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Verdana'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 2
+        OnClick = cmdHelpClick
       end
     end
   end

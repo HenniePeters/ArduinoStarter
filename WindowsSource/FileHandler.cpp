@@ -22,6 +22,10 @@
 
 #pragma package(smart_init)
 
+// #define DEFAULT_EXECUTABLE "arduino" // Linux
+#define DEFAULT_EXECUTABLE "C:\\Program Files\\Arduino\\Arduino.exe" // Windows 64
+#define DEFAULT_EXECUTABLE_x86 "C:\\Program Files (x86)\\Arduino\\Arduino.exe" // Windows 32
+
 class ArduinoPrefs arduino_prefs;
 class ArduinoSketch arduino_sketch;
 class FileHandler filehandler;
@@ -38,7 +42,14 @@ void ArduinoSketch::ClearCashedSketch( void ) {
 //---------------------------------------------------------------------------
 FileHandler::FileHandler() {
     bExecFixed = false;
-    Executable = "arduino";
+    Message = "";
+    if( FileExists(DEFAULT_EXECUTABLE) ) {
+        Executable = DEFAULT_EXECUTABLE;
+    } else if(FileExists(DEFAULT_EXECUTABLE_x86)) {
+        Executable = DEFAULT_EXECUTABLE_x86;
+    } else {
+        Message += AnsiString("The default Arduino executable was not found, expecting the 'exec=' line in preferences.");
+    }
 }
 //---------------------------------------------------------------------------
 bool FileHandler::ReadSketch( AnsiString wxsIno ) {

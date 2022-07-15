@@ -63,6 +63,7 @@ public:
     void WritePrefsExcept( AnsiString );
     AnsiString BannedCharacters( AnsiString );
     AnsiString CommandLine; // Windows ONLY
+    AnsiString Message;
 private:
 };
 

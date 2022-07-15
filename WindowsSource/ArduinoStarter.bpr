@@ -4,10 +4,10 @@
   <MACROS>
     <VERSION value="BCB.06.00"/>
     <PROJECT value="ArduinoStarter.exe"/>
-    <OBJFILES value="ArduinoStarter.obj main.obj FileHandler.obj"/>
+    <OBJFILES value="ArduinoStarter.obj main.obj FileHandler.obj help.obj"/>
     <RESFILES value="ArduinoStarter.res"/>
     <DEFFILE value=""/>
-    <RESDEPEN value="$(RESFILES) main.dfm"/>
+    <RESDEPEN value="$(RESFILES) main.dfm help.dfm"/>
     <LIBFILES value=""/>
     <LIBRARIES value="vclx.lib rtl.lib vcl.lib"/>
     <SPARELIBS value="vcl.lib rtl.lib vclx.lib"/>
@@ -51,6 +51,7 @@
       <FILE FILENAME="ArduinoStarter.cpp" FORMNAME="" UNITNAME="ArduinoStarter" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="main.cpp" FORMNAME="frmMain" UNITNAME="main" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="FileHandler.cpp" FORMNAME="" UNITNAME="FileHandler" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="help.cpp" FORMNAME="frmHelp" UNITNAME="help" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
   </FILELIST>
   <BUILDTOOLS>
   </BUILDTOOLS>

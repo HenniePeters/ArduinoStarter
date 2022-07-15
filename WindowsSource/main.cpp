@@ -4,6 +4,7 @@
 #pragma hdrstop
 #include "FileHandler.h"
 #include "main.h"
+#include "help.h"
 //------------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -15,6 +16,7 @@ __fastcall TfrmMain::TfrmMain(TComponent* Owner)
 }
 //---------------------------------------------------------------------------
 void __fastcall TfrmMain::FormCreate(TObject *Sender) {
+    frmMain->Position = poDefault;
     PopulateListbox();
     if( ListBox1->Count > 0 ) {
         ListBox1->Selected[0] = true;
@@ -45,7 +47,7 @@ void __fastcall TfrmMain::cmdOpenClick(TObject *Sender) {
                 Application->MessageBoxA( "Error while processing preferences.txt\nCheck the board settings before uploading.", "Warning" );
             }
         } else { // sketch does not contain header information, just open the sketch
-            AnsiString msg = AnsiString("There was no board information found in the sketch.\nCheck the board settings before uploading.");
+            AnsiString msg = AnsiString("There was no controller type (//board= and //target=) found in the sketch.\nCheck the board settings before uploading.");
             Application->MessageBoxA( msg.c_str(), "Warning" );
             filehandler.ReadPreferences("");
         }
@@ -150,6 +152,18 @@ void __fastcall TfrmMain::PopulateListbox( void ) {
     AnsiString wxsLabel = buf;
     wxsLabel += " sketches found.";
     lblRecent->Caption = wxsLabel;
+}
+//---------------------------------------------------------------------------
+void __fastcall TfrmMain::cmdHelpClick(TObject *Sender) {
+    frmHelp->Position = poDefault;
+    frmHelp->Show();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TfrmMain::FormResize(TObject *Sender) {
+    if( frmMain->Width != 1043 ) {
+        frmMain->Width = 1043;
+    }
 }
 //---------------------------------------------------------------------------
 

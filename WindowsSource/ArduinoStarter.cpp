@@ -4,6 +4,7 @@
 #include "FileHandler.h"
 //---------------------------------------------------------------------------
 USEFORM("main.cpp", frmMain);
+USEFORM("help.cpp", frmHelp);
 //---------------------------------------------------------------------------
 WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR lpCmdLine, int) {
     try {
@@ -18,6 +19,7 @@ WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR lpCmdLine, int) {
         if( ! *lpCmdLine ) {
             filehandler.ReadPreferences("");
             Application->CreateForm(__classid(TfrmMain), &frmMain);
+            Application->CreateForm(__classid(TfrmHelp), &frmHelp);
             Application->Run();
         } else {
             // tested with ....\ArduinoStarter\TestFiles\Weegschaal.ino
@@ -29,7 +31,7 @@ WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR lpCmdLine, int) {
                     Application->MessageBoxA( "Error while processing preferences.txt\nCheck the board settings before uploading.", "Warning" );
                 }
             } else { // sketch does not contain header information, just open the sketch
-                AnsiString msg = AnsiString("There was no board information found in the sketch.\nCheck the board settings before uploading.");
+                AnsiString msg = AnsiString("There was no controller type (//board= and //target=) found in the sketch.\nCheck the board settings before uploading.");
                 Application->MessageBoxA( msg.c_str(), "Warning" );
                 filehandler.ReadPreferences("");
             }

@@ -22,6 +22,7 @@ __published:	// IDE-managed Components
     TLabel *Label5;
     TButton *cmdOpen;
     TButton *cmdCancel;
+    TButton *cmdHelp;
     void __fastcall cmdOpenClick(TObject *Sender);
     void __fastcall cmdCancelClick(TObject *Sender);
     void __fastcall ListBox1Click(TObject *Sender);
@@ -29,6 +30,8 @@ __published:	// IDE-managed Components
     void __fastcall FormCreate(TObject *Sender);
     void __fastcall ListBox1MouseUp(TObject *Sender, TMouseButton Button,
           TShiftState Shift, int X, int Y);
+    void __fastcall cmdHelpClick(TObject *Sender);
+    void __fastcall FormResize(TObject *Sender);
 private:	// User declarations
     void __fastcall PopulateListbox( void );
 public:		// User declarations
