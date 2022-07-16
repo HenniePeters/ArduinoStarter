@@ -19,7 +19,7 @@ The first version of the Windows program is ready
 A program to automatically change the controller settings when you open a sketch. Also the list of recent files is much longer than the Arduino IDE shows.  
   
 The reason I made this program was because I have a few controller boards that cannot be programmed anymore. I accidently programmed these with the wrong controller settings.  
-~~For the moment a Linux version only~~. I will try to find some time to create a Windows version later.  
+~~For the moment a Linux version only. I will try to find some time to create a Windows version later.~~  
   
 When this program starts an arduino sketch, it will read the arduino sketch and try to locate the board type in the header lines of your program. When found it will use that information to set the board type in the Arduino IDE.  
   
