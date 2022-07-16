@@ -29,7 +29,7 @@ You can also delete files from the recent list by first selecting the items in t
   
 The information that you'll need to provide in the top lines of your sketch:  
 ---------------------------------  
-By default the Arduino IDE is started from the command line with the command 'arduino'. On my Linux laptop this works fine but in case the IDE will not come up, try to add a line in the sketch with this text:  
+By default the Arduino IDE (Linux )is started from the command line with the command 'arduino'. On my Linux laptop this works fine but in case the IDE will not come up, try to add a line in the sketch with this text:  
     //exec=<< arduino executable filename >> ( default = //exec=arduino )  
   
 You can also put that line in the preferences.txt file (without the two forward slashes)  
