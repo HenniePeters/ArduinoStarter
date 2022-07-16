@@ -13,6 +13,9 @@ The first version of the Windows program is ready
   
 2022-07-12  
 ----------  
+
+Description:
+------------
 A program to automatically change the controller settings when you open a sketch. Also the list of recent files is much longer than the Arduino IDE shows.  
   
 The reason I made this program was because I have a few controller boards that cannot be programmed anymore. I accidently programmed these with the wrong controller settings.  
