@@ -23,6 +23,8 @@ __published:	// IDE-managed Components
     TButton *cmdOpen;
     TButton *cmdCancel;
     TButton *cmdHelp;
+    TLabel *Label4;
+    TLabel *lblPreferences;
     void __fastcall cmdOpenClick(TObject *Sender);
     void __fastcall cmdCancelClick(TObject *Sender);
     void __fastcall ListBox1Click(TObject *Sender);

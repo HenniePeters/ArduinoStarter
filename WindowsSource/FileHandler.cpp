@@ -127,7 +127,7 @@ bool FileHandler::ReadPreferences( AnsiString param ) {
     char buf[1024];
     arduino_prefs.Path = "";
     AnsiString wxsPrefs = param;
-    AnsiString PossibleLocation[] = { "%USERPROFILE%\\Local Settings\\Application Data\\Arduino15\\", "%LOCALAPPDATA%\\Arduino15\\", "" };
+    AnsiString PossibleLocation[] = { "%USERPROFILE%\\Documents\\ArduinoData\\", "%USERPROFILE%\\AppData\\Local\\Arduino15\\", "%USERPROFILE%\\Local Settings\\Application Data\\Arduino15\\", "%LOCALAPPDATA%\\Arduino15\\", "" };
     if( wxsPrefs == "" ) {
         int i=0;
         do {

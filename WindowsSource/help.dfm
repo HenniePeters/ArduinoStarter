@@ -42,12 +42,21 @@ object frmHelp: TfrmHelp
       '//exec=<path to executable name> in the sketch.'
       ''
       'The '#39'preferences.txt'#39' is expected to reside in: '
-      '"%USERPROFILE%\\Local Settings\\Application Data\\Arduino15\\".'
+      '"%USERPROFILE%\\Documents\\ArduinoData\\"'
+      '"%USERPROFILE%\\AppData\\Local\\Arduino15\\".'
+      '"%USERPROFILE%\\Local Settings\\Application Data\\Arduino15\\"'
+      '"%LOCALAPPDATA%\\Arduino15\\"'
       
-        'When it is located somewhere else, it needs a line in the sketch' +
-        ' to point to that '
+        'The program will use the preferences.txt in the first location w' +
+        'here it is found in '
+      'this order.'
+      ''
+      
+        'When it is located somewhere else, it needs a line in every sket' +
+        'ch to point to that '
       'location:'
       '//root=<directory of preference.txt> (ending with a backslash \)'
+      'In that case the recent files cannot be located.'
       ''
       
         'To set the correct controller type when opening a sketch, copy a' +

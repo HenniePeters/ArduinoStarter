@@ -57,7 +57,7 @@ object frmMain: TfrmMain
     TabOrder = 0
     object Label5: TLabel
       Left = 0
-      Top = 81
+      Top = 121
       Width = 1035
       Height = 4
       Align = alTop
@@ -66,9 +66,9 @@ object frmMain: TfrmMain
     end
     object ListBox1: TListBox
       Left = 0
-      Top = 85
+      Top = 125
       Width = 1035
-      Height = 623
+      Height = 583
       Align = alClient
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText
@@ -86,7 +86,7 @@ object frmMain: TfrmMain
       Left = 0
       Top = 0
       Width = 1035
-      Height = 81
+      Height = 121
       Align = alTop
       BevelOuter = bvNone
       BorderStyle = bsSingle
@@ -139,6 +139,32 @@ object frmMain: TfrmMain
         Width = 129
         Height = 18
         Caption = 'Controller type:'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Verdana'
+        Font.Style = []
+        ParentFont = False
+      end
+      object Label4: TLabel
+        Left = 8
+        Top = 79
+        Width = 102
+        Height = 18
+        Caption = 'Preferences:'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Verdana'
+        Font.Style = []
+        ParentFont = False
+      end
+      object lblPreferences: TLabel
+        Left = 160
+        Top = 79
+        Width = 7
+        Height = 18
+        Caption = '-'
         Font.Charset = ANSI_CHARSET
         Font.Color = clWindowText
         Font.Height = -16

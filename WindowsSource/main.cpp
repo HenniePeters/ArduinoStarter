@@ -17,6 +17,7 @@ __fastcall TfrmMain::TfrmMain(TComponent* Owner)
 //---------------------------------------------------------------------------
 void __fastcall TfrmMain::FormCreate(TObject *Sender) {
     frmMain->Position = poDefault;
+    lblPreferences->Caption = arduino_prefs.Path;
     PopulateListbox();
     if( ListBox1->Count > 0 ) {
         ListBox1->Selected[0] = true;
